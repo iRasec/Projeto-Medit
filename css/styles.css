@@ -1,0 +1,592 @@
+header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: #000000;
+    
+    gap: 40%;
+}
+
+.logo a:hover {
+    color: gray;
+  }
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f8f8f8; /* Cor do logo */
+    padding-left: 12%;
+}
+
+.hrefs {
+    font-size: 20px;
+    font-weight: bold;
+    color: #F5F5F5; /* Cor do logo */
+    display: flex;
+    gap: 30px;
+    justify-content: center; /* Centraliza os itens */
+}
+
+.hrefs a:hover{
+    color: #C89E4F;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo{
+        padding-left: 0%;
+        padding-top: 2%;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hrefs {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .hrefs a {
+        display: block;
+        padding: 10px;
+    }
+
+    .hrefs.show {
+        display: flex;
+    }
+
+    .imagem{
+        display: none;
+    }
+}
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Ajuste conforme o tamanho das imagens */
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%; /* Começa fora da tela */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide.active {
+    transform: translateX(0); /* Fica visível */
+}
+
+.slide.previous {
+    transform: translateX(-100%); /* Sai para a esquerda */
+}
+
+.slide.next {
+    transform: translateX(100%); /* Sai para a direita */
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.nav.prev {
+    left: 10px;
+}
+
+.nav.next {
+    right: 10px;
+}
+
+.introducao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw; /* Espaço entre o texto e a imagem */
+    padding: 10vh 5vw;
+    width: 100%;
+    flex-wrap: wrap; /* Permite quebrar em telas pequenas */
+}
+
+.texto {
+    flex: 1;
+    max-width: 40%; /* Para evitar que o texto fique muito espalhado */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.imagem {
+    width: 40vw; /* Define um tamanho proporcional */
+    max-width: 500px; /* Limite para não crescer demais */
+    height: auto;
+}
+
+.imagem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.botao{
+    margin-top: 1.5rem; /* mt-6 */
+    padding-left: 7rem; /* px-28 */
+    padding-right: 7rem; /* px-28 */
+    padding-top: 1.25rem; /* py-5 */
+    padding-bottom: 1.25rem; /* py-5 */
+    font-size: 1.25rem; /* text-2xl */
+    background-color: #000000; /* bg-black */
+    color: #ffffff; /* text-white */
+    font-weight: 600; /* font-semibold */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: background-color 0.3s ease; /* transition */
+}
+
+.botao:hover {
+    background-color: #4b5563; /* hover:bg-gray-700 */
+}
+@media (max-width: 768px) {
+    .introducao {
+        flex-direction: row;
+        text-align: center;
+        padding: 1vh 3vw;
+    }
+
+    .texto {
+        max-width: 100%;
+    }
+
+    .imagem {
+        width: 80%;
+        max-width: 300px;
+    }
+    .botao{
+        padding-left: 2rem; /* px-8 */
+        padding-right: 2rem; /* px-8 */
+        padding-top: 1rem; /* py-4 */
+        padding-bottom: 1rem; /* py-4 */
+        font-size: 1rem; /* text-lg */
+    }
+}
+
+
+.desenvolvimento-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza verticalmente (caso precise) */
+    text-align: left;
+    gap: 50px;
+    padding-top: 20px;
+    width: 100%;
+}
+.imagem_cerimonia_desenvolvimento-2 {
+    width: 704px;
+    height: 704px; /* Garante que a altura e a largura sejam iguais, formando um quadrado */
+    overflow: hidden; /* Oculta qualquer parte da imagem que ultrapasse o tamanho do container */
+}
+
+.imagem_cerimonia_desenvolvimento-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Isso vai cortar e ajustar a imagem para preencher o container */
+}
+
+.desenvolvimento-2_texto {
+    max-width: 600px; 
+    display: flex;
+    flex-direction: column; /* Alinha os itens na coluna */
+    gap: 30px; /* Adiciona espaçamento entre os elementos filhos */
+    font-size: 24px;
+    color: #333;
+}
+
+@media (max-width: 768px) { /* Para telas menores que 768px */
+    .desenvolvimento-2 {
+        flex-direction: column-reverse; /* Empilha os elementos */
+        text-align: center; /* Centraliza o texto */
+        gap: 0px;
+    }
+
+    .imagem_cerimonia_desenvolvimento-2 {
+        width: 90%; /* Reduz o tamanho da imagem */
+        height: auto; /* Mantém a proporção */
+        max-width: 400px; /* Define um limite para a imagem */
+    }
+
+    .desenvolvimento-2_texto {
+        font-size: 18px; /* Reduz o tamanho do texto */
+        max-width: 90%; /* Ajusta para telas menores */
+        gap: 10px;
+    }
+
+    .desenvolvimento-3{
+        display: none !important; 
+    }
+}
+
+
+.cerimonias {
+    width: 100%;
+    clear: both;
+    text-align: center;
+    margin-top: 40px;
+}
+.imagens_cerimonia {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.cerimonia {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza imagem e texto */
+    text-align: center;
+    max-width: 400px;
+}
+
+.cerimonia img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cerimonia p {
+    margin-top: 10px; /* Espaço entre imagem e texto */
+    font-size: 24px;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .cerimonia img {
+        width: 80%; /* Reduz o tamanho da imagem */
+    }
+
+    .cerimonia p {
+        font-size: 20px; /* Diminui um pouco o tamanho do texto */
+    }
+}
+
+.desenvolvimento-3{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.desenvolvimento-3_imagens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+    width: 85%;
+    height: 437px; /* Garante que a altura e a largura sejam iguais, formando um quadrado */
+    overflow: hidden; /* Oculta qualquer parte da imagem que ultrapasse o tamanho do container */
+}
+.desenvolvimento-3_imagens img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Isso vai cortar e ajustar a imagem para preencher o container */
+}
+
+.medico{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centraliza verticalmente (caso precise) */
+    margin-top: 5%;
+    gap: 8%;
+}
+.medico img{
+    width: 518px;
+    height: 486px;
+}
+
+.medico-texto{
+    width: 550px;
+    height: 486px;
+    text-align: left;
+    font-size: 24px;
+    color: #333;
+}
+
+.depoimentos{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center; /* Centraliza verticalmente (caso precise) */
+    width: 100%;
+    gap: 6%;
+    margin-top: 3%;
+
+}
+
+@media (max-width: 768px) {  
+    .medico {
+        flex-direction: column-reverse;  
+        align-items: center;  
+        text-align: center;  
+        gap: 20px;  
+    }
+
+    .medico img {
+        width: 80%;  
+        height: auto;  
+    }
+
+    .medico-texto {
+        width: 90%;  
+        font-size: 20px;  
+        text-align: center;
+        margin-bottom: 8vh;
+    }
+
+    .depoimentos {
+        flex-direction: column;  
+        gap: 20px;  
+    }
+}
+
+
+.depoimentos-separacao{
+    width: 600px;
+    gap: 20px;
+}
+
+.video-depoimento, .video-depoimento1{
+    width: 550px;  /* Largura */
+    height: 450px; /* Altura */
+    object-fit: cover; /* Garante que o vídeo preencha o quadrado */
+
+}
+
+@media (max-width: 768px) {  
+    .depoimentos-separacao {
+        width: 90%;  
+        gap: 10px;  
+    }
+
+    .video-depoimento1{
+        display: none !important;
+    }
+
+    .video-depoimento {
+        width: 90%;  
+        height: auto;  
+    }
+    .depoimentos{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+.FAQ{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centraliza verticalmente (caso precise) */
+    text-align: left; 
+    gap: 100px;
+    margin-top: 30px;
+    margin-bottom: 55px;
+}
+
+.FAQ-texto, .FAQ-texto2 {
+    max-width: 600px; 
+    display: flex;
+    flex-direction: column; /* Alinha os itens na coluna */
+    gap: 30px; /* Adiciona espaçamento entre os elementos filhos */
+    font-size: 24px;
+    color: #333;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out;
+}
+
+.faq-btn {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.faq-btn:hover {
+    background: #45a049;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px; /* Ajuste conforme necessário */
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {  
+    .FAQ
+     {
+        flex-direction: column; /* Empilha os itens no mobile */
+        gap: 30px; /* Reduz o espaço entre os itens */
+        text-align: center; /* Centraliza o texto */
+    }
+
+}
+
+
+
+/* Estilos do footer movidos do index.html */
+.footer {
+    background-color: #091E05;
+    color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 500px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.logo-footer {
+    width: 150px;
+    height: 150px;
+}
+
+.frase-footer {
+    font-size: 26px;
+    font-weight: bold;
+    max-width: 450px;
+    text-align: center;
+}
+
+.contact-info {
+    font-size: 24px;
+    color: #f8f8f8;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 34px;
+    height: 34px;
+}
+
+.mapa-footer {
+    width: 500px;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .container-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo-footer {
+        width: 100px;
+        height: 100px;
+    }
+
+    .frase-footer {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .mapa-footer {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.section-divider {
+    border: none;
+    border-top: 2px dashed #000000; /* Linha tracejada */
+    margin: 10px 0; /* Espaçamento vertical */
+}
